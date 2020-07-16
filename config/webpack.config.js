@@ -5,8 +5,11 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.resolve(__dirname, '../public/index.html'),
 })
 
-module.exports = {
-  mode: 'production',
+/**
+ * @type { import('webpack').Configuration}
+ */
+const config = {
+  mode: 'development',
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, '../build'),
@@ -19,6 +22,10 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader' ,'less-loader'],
+      },
     ],
   },
   plugins: [htmlWebpackPlugin],
@@ -27,6 +34,8 @@ module.exports = {
     extensions: ['.mjs', '.js', '.jsx'],
   },
   devServer: {
-    stats: 'errors-only'
+    stats: 'errors-only',
   },
 }
+
+module.exports = config
