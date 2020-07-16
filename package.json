@@ -4,7 +4,7 @@
   "description": "💕",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config.js --open",
+    "start": "webpack-dev-server --config ./config/webpack.config.js",
     "build": "rm -rf build/* && webpack --config ./config/webpack.config.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/begonia9193/lovers-client#readme",
   "dependencies": {
+    "antd": "^4.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
@@ -30,6 +31,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.12.0",

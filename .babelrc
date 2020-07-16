@@ -2,5 +2,14 @@
   "presets": [
     "@babel/preset-react",
     "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
   ]
 }

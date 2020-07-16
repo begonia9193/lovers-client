@@ -11,6 +11,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 const config = {
   mode: 'development',
   entry: path.resolve(__dirname, '../src/index.js'),
+  devtool: "inline-source-map",
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'js/[name].[hash].bundle.js',
@@ -24,18 +25,34 @@ const config = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader' ,'less-loader'],
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
-  plugins: [htmlWebpackPlugin],
+  plugins: [
+    htmlWebpackPlugin
+  ],
 
   resolve: {
     extensions: ['.mjs', '.js', '.jsx'],
   },
   devServer: {
     stats: 'errors-only',
+    overlay: true,
+    host: 'localhost',
+    port: '3001',
+    open: true,
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
+  }
 }
 
 module.exports = config
