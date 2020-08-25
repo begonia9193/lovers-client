@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import NotFoundPage from '@/pages/404.jsx'
 import Loading from '@/components/Loading.jsx'
+import '@/less/index.less'
 
 // 懒加载
 const Home = React.lazy(() => import('@/pages/home/Index.jsx'))
