@@ -23,6 +23,7 @@ const getTime = () => {
 
 export default () => {
   const [times, setTimes] = useState(getTime())
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimes(getTime())
@@ -31,6 +32,7 @@ export default () => {
       clearInterval(timer)
     }
   }, [])
+  
   return (
     <p className={ Style.wrap }>
       第<strong>{ times.day }</strong>天<strong>{ times.hour }</strong>小时
