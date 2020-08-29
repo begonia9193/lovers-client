@@ -1,0 +1,42 @@
+{
+  "name": "shmily-server",
+  "version": "0.1.0",
+  "description": "provide services to shimly",
+  "main": "server.ts",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/mongoose": "^5.7.36",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start": "nodemon server.ts",
+    "build": "rm -rf dist/* && tsc && node server.js prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/begonia9193/shmily-server.git"
+  },
+  "keywords": [
+    "koa",
+    "typescript",
+    "nodejs",
+    "mongoose",
+    "前后端分离",
+    "love",
+    "love show"
+  ],
+  "author": "begonia<http://begonia9193.gitee.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/begonia9193/shmily-server/issues"
+  },
+  "homepage": "https://github.com/begonia9193/shmily-server#readme"
+}

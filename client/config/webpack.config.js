@@ -54,7 +54,7 @@ const config = {
     stats: 'errors-only',
     overlay: true,
     host: 'localhost',
-    port: '3001',
+    port: '5200',
     open: true,
   },
   resolve: {
