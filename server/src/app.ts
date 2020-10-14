@@ -8,9 +8,9 @@ dotenv.config() // 加载通用的环境变量
 const EnvPath = process.argv[2] === 'dev' ? './dev.env' : './prod.env'
 dotenv.config({ path: EnvPath }) // 根据环境加载环境变量
 mysql.createConnection({
-  host: '119.23.202.18',
+  host: process.env.DB_HOST,
   user: 'root',
-  password: 'root_begonia',
+  password: process.env.DB_PASSWORD,
   database: 'shmily'
 }).connect(err => {
   if (err) {
